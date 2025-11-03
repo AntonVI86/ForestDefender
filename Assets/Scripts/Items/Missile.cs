@@ -11,5 +11,4 @@ public abstract class Missile : MonoBehaviour
 
     public virtual void Update() =>
         transform.Translate(Vector3.forward * _speedMove * Time.deltaTime, Space.Self);
-
 }

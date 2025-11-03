@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6048219159998046562}
   - component: {fileID: 1509822237566289418}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: FrostBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

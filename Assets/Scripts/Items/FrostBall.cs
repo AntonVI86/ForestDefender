@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Stone : Missile
+public class FrostBall : Missile
 {
     [SerializeField] private float _minDamageValue;
     [SerializeField] private float _maxDamageValue;
