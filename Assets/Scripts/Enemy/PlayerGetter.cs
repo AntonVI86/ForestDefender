@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerGetter : MonoBehaviour
 {
-    [SerializeField] private Health _health;
+    [SerializeField] private Health _playerHealth;
 
-    public Health Player => _health;
+    public Health PlayerHealth => _playerHealth;
 }

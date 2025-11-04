@@ -42,7 +42,7 @@ public class EnemySpawner : Spawner
 
         Enemy newEnemy = Instantiate(_enemyPrefab, point.Position, Quaternion.identity);
         newEnemy.transform.SetParent(transform);
-        newEnemy.GetPlayer();
+        newEnemy.Initialize();
 
         Instantiate(_spawnVfx, point.transform);
 

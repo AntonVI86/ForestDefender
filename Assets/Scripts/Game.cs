@@ -50,7 +50,7 @@ public class Game : MonoBehaviour
         {
             _gameResults.text = "";
 
-            _health.transform.position = _playerDefaultPoint.position;
+            _mover.transform.position = _playerDefaultPoint.position;
             _health.enabled = true;
             _health.ResetHealth();
 
