@@ -28,22 +28,18 @@ public class Enemy : MonoBehaviour
         _playerHealth = GetComponentInParent<PlayerGetter>().PlayerHealth;
     }
 
+    public void ProcessDie()
+    {
+        ParticleSystem deathEffect = Instantiate(_deathVfxPrefab, transform);
+        deathEffect.transform.SetParent(null);
+
+        Destroy(gameObject);
+    }
+
     private void RotateTo(Vector3 direction)
     {
         Quaternion lookRotation = Quaternion.LookRotation(direction);
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, _speedRotation * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Fireball fireball))
-        {
-            ParticleSystem deathEffect = Instantiate(_deathVfxPrefab, transform);
-            deathEffect.transform.SetParent(null);
-
-            Destroy(fireball.gameObject);
-            Destroy(gameObject);
-        }
     }
 }

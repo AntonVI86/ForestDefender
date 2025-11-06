@@ -3,16 +3,14 @@ using UnityEngine;
 
 public class GameRulesDisplayer : MonoBehaviour
 {
-    [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private PlayerCharacter _playerInput;
     [SerializeField] private TMP_Text _gameRules;
     [SerializeField] private Timer _timer;
 
     [SerializeField] private float _timeToShowInfo;
 
-    private void Start()
-    {
+    private void Start() =>
         ShowGameRules();    
-    }
 
     private void Update()
     {
@@ -23,7 +21,7 @@ public class GameRulesDisplayer : MonoBehaviour
         }
 
         _gameRules.text = "";
-        this.enabled = false;
+        enabled = false;
     }
 
     private void ShowGameRules()

@@ -1,34 +1,44 @@
 using UnityEngine;
 
-public class Speed : Ability
+public class Speed : MonoBehaviour
 {
     [SerializeField] private float _defaultSpeed;
+    [SerializeField] private ParticleSystem _vfx;
 
-    private float _value;
-    public bool IsSpeedUp
-    {
-        get
-        {
-            if (_value > _defaultSpeed)
-                return true;
+    [SerializeField] private Timer _timer;
 
-            Vfx.Stop();
-            return false;
-        }
-    }
+    private float _timeActionOfSpeedUp = 5f;
 
-    public float Value => _value;
+    private float _currentSpeed;
+
+    public float CurrentSpeed => _currentSpeed;
 
     private void Awake() => ResetSpeed();
 
-    public void ResetSpeed() => _value = _defaultSpeed;
+    private void Update()
+    {
+        if (_currentSpeed <= _defaultSpeed)
+            return;
 
-    public override void IncreaseStat(float value)
+        _timer.ProcessTimeFlow();
+
+        if (_timer.CurrentTime > _timeActionOfSpeedUp)
+        {
+            _vfx.Stop();
+            ResetSpeed();
+        }
+    }
+
+    public void ResetSpeed() => _currentSpeed = _defaultSpeed;
+
+    public void Increase(float value)
     {
         if (value < 0)
             return;
 
-        _value += value;
-        Vfx.Play();
+        _timer.ResetTime();
+
+        _currentSpeed += value;
+        _vfx.Play();
     }
 }

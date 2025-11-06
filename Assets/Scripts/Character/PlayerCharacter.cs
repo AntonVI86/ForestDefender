@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerCharacter : MonoBehaviour
 {
     public const string HorizontalAxis = "Horizontal";
     public const string VerticalAxis = "Vertical";

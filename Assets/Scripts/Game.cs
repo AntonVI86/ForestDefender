@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
 
     [SerializeField] private Health _health;
     [SerializeField] private CharacterMover _mover;
-    [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private PlayerCharacter _playerInput;
 
     [SerializeField] private Transform _playerDefaultPoint;
 

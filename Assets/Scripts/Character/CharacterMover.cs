@@ -10,7 +10,7 @@ public class CharacterMover : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
 
     public void ProcessMoveTo(Vector3 direction) =>
-        _rigidbody.velocity = direction * _speed.Value;
+        _rigidbody.velocity = direction * _speed.CurrentSpeed;
 
     public void ResetSpeed() => _rigidbody.velocity = Vector3.zero;
 }

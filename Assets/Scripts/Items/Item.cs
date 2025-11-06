@@ -2,13 +2,14 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    [SerializeField] protected float _value;
-
-    public float Value => _value;
-    
-    public void UseTo(Ability stat)
+    public virtual void Use(GameObject player)
     {
         Destroy(gameObject);
-        stat.IncreaseStat(_value);
     }
+
+    public virtual void OnPickUp(GameObject owner)
+    {
+    }
+
+    public virtual bool CanUse(GameObject owner) => true;
 }

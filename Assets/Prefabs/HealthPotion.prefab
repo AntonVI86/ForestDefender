@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1848f9eed7112244b6cd28e47fc5a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 15
+  _healValue: 15
 --- !u!114 &4924067252526836707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdc702199cc0e94c98f326b6a00b77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedRotate: 0
+  _speedRotate: 50
 --- !u!1 &3957490589716183962
 GameObject:
   m_ObjectHideFlags: 0

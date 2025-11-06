@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Health : Ability
+public class Health : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem _healVfx;
     [SerializeField] private float _maxHealth;
     [SerializeField] private CharacterAnimator _animator;
 
@@ -40,13 +41,13 @@ public class Health : Ability
         }
     }
 
-    public override void IncreaseStat(float value)
+    public void Increase(float value)
     {
         if (value < 0)
             return;
 
         _health += value;
-        Vfx.Play();
+        _healVfx.Play();
 
         if (_health >= _maxHealth)
             _health = _maxHealth;
